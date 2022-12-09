@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-10-17T18:30:52Z" product-name="ns_open_streetmap">
+		<header/>
+		<body>
+			<trans-unit id="tx_nsopenstreetmap_domain_model_example">
+				<source>Select place like hotels, hospitals, banks etc..</source>
+			</trans-unit>
+			<trans-unit id="tx_ns_open_streetmap_domain_model_map">
+				<source>OpenStreet Map</source>
+			</trans-unit>
+			<trans-unit id="tx_ns_open_streetmap_domain_model_map.description">
+				<source>In this plugin you can find places(banks,store etc..), direction between two places with different theme.</source>
+			</trans-unit>
+			<trans-unit id="tx_nsopenstreetmap_domain_model_address">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_nsopenstreetmap_domain_model_address.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_nsopenstreetmap_domain_model_address.infocontent">
+				<source>Infocontent</source>
+			</trans-unit>
+			<trans-unit id="tx_nsopenstreetmap_domain_model_address.latitude">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_nsopenstreetmap_domain_model_address.longitude">
+				<source>Longitude</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,61 @@
+
+plugin.tx_nsopenstreetmap_map {
+  view {
+    templateRootPaths.0 = EXT:ns_open_streetmap/Resources/Private/Templates/
+    templateRootPaths.1 = {$plugin.tx_nsopenstreetmap_map.view.templateRootPath}
+    partialRootPaths.0 = EXT:ns_open_streetmap/Resources/Private/Partials/
+    partialRootPaths.1 = {$plugin.tx_nsopenstreetmap_map.view.partialRootPath}
+    layoutRootPaths.0 = EXT:ns_open_streetmap/Resources/Private/Layouts/
+    layoutRootPaths.1 = {$plugin.tx_nsopenstreetmap_map.view.layoutRootPath}
+  }
+  
+  settings{
+    jquery = {$plugin.tx_nsopenstreetmap_map.settings.jquery}
+    leafletjs = {$plugin.tx_nsopenstreetmap_map.settings.leafletjs}    
+  }
+}
+
+page {
+    includeCSS {
+        mapstyle = EXT:ns_open_streetmap/Resources/Public/assets/Css/style.css
+        leafletCss = EXT:ns_open_streetmap/Resources/Public/assets/leaflet/leaflet.css
+    }
+    includeJSLibs {
+        nsgmapjquery = EXT:ns_open_streetmap/Resources/Public/assets/js/jquery.min.js
+        nsgmapjquery.if.isTrue = {$plugin.tx_nsopenstreetmap_map.settings.jquery}        
+        leafletjs = EXT:ns_open_streetmap/Resources/Public/assets/js/Leaflet.js
+        leafletjs.if.isTrue = {$plugin.tx_nsopenstreetmap_map.settings.leafletjs}        
+
+    }
+    includeJSFooter {
+        mapjs = EXT:ns_open_streetmap/Resources/Public/js/map.js   
+        customJs = EXT:ns_open_streetmap/Resources/Public/js/custom.js
+
+    }
+}
+
+listAction = PAGE
+listAction {
+    typeNum = 741853
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-type:application/json
+        xhtml_cleaning = 0
+        admPanel = 0
+    }
+
+    10 = USER
+    10 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        extensionName = NsOpenStreetmap
+        pluginName = Map
+        vendorName = Nitsan
+        controller = Address
+        switchableControllerActions {
+            Address {
+                1 = find
+            }
+        }
+        renderObj < tt_content.list.20.nsopenstreetmap_map
+    }
+}

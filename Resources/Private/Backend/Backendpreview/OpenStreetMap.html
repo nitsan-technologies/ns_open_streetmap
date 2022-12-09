@@ -1,0 +1,44 @@
+<table class='table table-striped table-hover typo3-extension-list no-footer'>
+	<thead>
+		<tr>
+			<th colspan='2'>
+				<h2><f:image src="EXT:ns_open_streetmap/Resources/Public/assets/Icons/openstreetmap.png" height="36" width="36" />
+				<f:translate key="LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xl:tx_ns_open_streetmap_domain_model_map" /></h2>
+			</th>
+		</tr>
+	</thead>
+	<tr>
+		<td>
+		<table class='table table-striped table-hover typo3-extension-list no-footer'>
+			<thead>
+				<tr>
+					<th colspan='2'>
+						<h3><f:translate key="LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xl:tx_nsopenstreetmap_map.flexform.sheetTitle" />
+						</h3>
+					</th>
+				</tr>
+			</thead>
+			<f:if condition="{flexformData.settings.address}">
+					<tr>
+						<th style='text-align:left'>
+					    	<f:translate key="LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xl:address" />
+					    </th>
+					    <td style='padding-left: 10px;'>
+					    	{flexformData.settings.address}
+					    </td>
+					</tr>
+			</f:if>	
+			<f:if condition="{flexformData.settings.height}">
+				<tr>
+					<th style='text-align:left'>
+				    	<f:translate key="LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xl:height" />
+				    </th>
+				    <td style='padding-left: 10px;'>
+				    	{flexformData.settings.height}
+				    </td>
+				</tr>
+			</f:if>
+		</table>
+		</td>
+	</tr>
+</table>

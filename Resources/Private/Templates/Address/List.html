@@ -1,0 +1,27 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+	<f:section name="main">
+		<div class="tx-ns-open-street-map-wrapper">		
+			<f:switch expression="{settings.radiussearch}">
+					<f:case value="1">
+						<f:render partial="Address/RadiusSearch" arguments="{_all}" />	
+						<f:if condition="{settings.direction}">
+							<f:render partial="Address/DistanceAndDirection" arguments="{_all}" />						
+						</f:if>
+					</f:case>
+					<f:case value="2">
+						<f:render partial="Address/RecordSearch" arguments="{_all}" />						
+					</f:case>
+			</f:switch>
+			<f:form.hidden class="hidden" id="gmaptheme" value="{settings.theme}" />
+			<div class="store_loca">
+				<div class="map-block">
+					<div id="map_{data.uid}" class="map_canvas"></div>
+					<div id="dis_dir_block" class="dis_dir_block"></div>
+				</div>
+				<f:render partial="Address/AddressList" arguments="{_all}" />						
+			</div>
+			<f:render partial="Address/Settings" arguments="{_all}" />
+		</div>
+	</f:section>
+</html>

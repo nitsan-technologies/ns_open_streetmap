@@ -1,0 +1,33 @@
+{namespace esc=Nitsan\NsOpenStreetmap\ViewHelpers}
+<div class="info-window">
+    <div class="title">
+        <b>
+            <esc:escape>
+                <f:format.raw>
+                    {address.title}
+                </f:format.raw>
+            </esc:escape>
+        </b>
+    </div>
+    <div class="address">
+        <f:format.raw>
+            <esc:escape>
+                <f:format.htmlentitiesDecode>
+                        <f:format.html parseFuncTSPath="lib.parseFunc">
+                            {address.infocontent}
+                        </f:format.html>
+                </f:format.htmlentitiesDecode>
+            </esc:escape>
+        </f:format.raw>
+    </div>
+    <f:if condition="{address.maplink}">
+        <div class="view-link">
+            <a href="https://www.openstreetmap.org/?mlat={address.latitude}&mlon={address.longitude}&zoom=16" target="_blank">
+                <span>
+                    <f:translate key="LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang.xlf:tx_nsopenstreetmap_domain_model_address.maplink">
+                    </f:translate>
+                </span>
+            </a>
+        </div>
+    </f:if>
+</div>

@@ -1,0 +1,18 @@
+
+plugin.tx_nsopenstreetmap_map {
+  view {
+    # cat=plugin.tx_nsopenstreetmap_map/file; type=string; label=Path to template root (FE)
+    templateRootPath = EXT:ns_open_streetmap/Resources/Private/Templates/
+    # cat=plugin.tx_nsopenstreetmap_map/file; type=string; label=Path to template partials (FE)
+    partialRootPath = EXT:ns_open_streetmap/Resources/Private/Partials/
+    # cat=plugin.tx_nsopenstreetmap_map/file; type=string; label=Path to template layouts (FE)
+    layoutRootPath = EXT:ns_open_streetmap/Resources/Private/Layouts/
+  }
+  settings {
+    # cat=plugin.tx_nsopenstreetmap_map//c; type=boolean; label = LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xlf:jquery
+    jquery = 
+
+    # cat=plugin.tx_nsopenstreetmap_map//d; type=boolean; label = LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xlf:leaflet 
+    leafletjs = 
+  }
+}

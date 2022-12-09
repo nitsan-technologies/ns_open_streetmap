@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-10-17T18:30:52Z" product-name="ns_open_streetmap">
+		<header/>
+		<body>
+			<trans-unit id="tx_ns_open_streetmap_domain_model_map">
+				<source>Open Street Map</source>
+			</trans-unit>
+			<trans-unit id="tx_ns_open_streetmap_domain_model_map.description">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="address.description">
+				<source>address</source>
+			</trans-unit>
+			<trans-unit id="infocontent.description">
+				<source>infocontent</source>
+			</trans-unit>
+			<trans-unit id="latitude.description">
+				<source>latitude</source>
+			</trans-unit>
+			<trans-unit id="longitude.description">
+				<source>longitude</source>
+			</trans-unit>
+			<trans-unit id="map.description">
+				<source>map</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

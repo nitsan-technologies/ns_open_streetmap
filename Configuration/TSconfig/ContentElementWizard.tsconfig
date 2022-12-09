@@ -1,0 +1,15 @@
+mod.wizards.newContentElement.wizardItems.plugins {
+	elements {
+			openstreetmap {
+				icon = ../typo3conf/ext/ns_open_streetmap/Resources/Public/assets/Icons/ns_open_streetmap.svg
+				iconIdentifier = ext-open-street-map-icon
+				title = LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xlf:tx_ns_open_streetmap_domain_model_map
+				description = LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xlf:tx_ns_open_streetmap_domain_model_map.description
+				tt_content_defValues {
+					CType = list
+					list_type = nsopenstreetmap_map
+				}
+			}
+		}
+	show = *
+}

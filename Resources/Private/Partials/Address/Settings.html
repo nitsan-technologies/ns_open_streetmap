@@ -1,0 +1,43 @@
+{namespace nsopenstreetmap=Nitsan\NsOpenStreetmap\ViewHelpers}
+<nsopenstreetmap:script>
+    (function ($, window, document, undefined) {
+    $(function () {
+
+    var openstreetmap = new Object();
+  
+    openstreetmap.defaultMapTypes = "<f:format.html parseFuncTSPath="">{settings.defaulttype}</f:format.html>";
+    openstreetmap.mapSettings = <f:format.raw>{</f:format.raw>
+    id: 'map_' + {data.uid},
+    <f:if condition="{settings.height} == ''">
+        <f:then>
+            height : '500px',
+        </f:then>
+        <f:else>
+            height : '{settings.height}',
+        </f:else>
+    </f:if>
+    width : '100%'
+    <f:format.raw>}</f:format.raw>
+
+    openstreetmap.locations = new Array();
+    <f:for each="{locations}" as="address" iteration="i">
+        openstreetmap.locations[{i.index}]  = <f:format.raw>{</f:format.raw>
+        uid: {address.uid},
+        title: '<nsopenstreetmap:escape>{address.title}</nsopenstreetmap:escape>',
+        latitude: {address.latitude -> f:format.number(decimals:6, thousandsSeparator:'')},
+        longitude: {address.longitude -> f:format.number(decimals:6, thousandsSeparator:'')},
+        infoWindowContent: '<f:format.raw><nsopenstreetmap:escape><f:render partial="Address/InfoWindow" arguments="{_all}" /></nsopenstreetmap:escape></f:format.raw>',
+        <f:format.raw>}</f:format.raw>
+    </f:for>
+
+    var $element = jQuery("#" + openstreetmap.mapSettings.id);
+    $element.nsopenstreetmap(openstreetmap);
+    if(openstreetmap.mapSettings.width.indexOf('%') != -1) {
+        $(window).resize(function() {
+            $element.trigger('mapresize');
+        });
+    }
+
+    }); // end of closure
+    })(jQuery || $, window, document);
+</nsopenstreetmap:script>
