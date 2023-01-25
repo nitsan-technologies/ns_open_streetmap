@@ -25,7 +25,7 @@
     }
   },
   "replace": {
-    "nitsan/ns-open-streetmap": "self.version"
+    "typo3-ter/ns-open-streetmap": "self.version"
   },
   "config": {
     "vendor-dir": ".Build/vendor/",
