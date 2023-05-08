@@ -1,11 +1,11 @@
 <?php
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 
 $extKey = 'ns_open_streetmap';
 
 // register plugin
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'Nitsan.NsOpenStreetmap',
+    'NsOpenStreetmap',
     'Map',
     'OpenStreetMap'
 );

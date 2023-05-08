@@ -1,8 +1,9 @@
 <?php
 namespace Nitsan\NsOpenStreetmap\Controller;
 
-use TYPO3\CMS\Extbase\Annotation\Inject;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use Psr\Http\Message\ResponseInterface;
+
 /***
  *
  * This file is part of the "[Nitsan] Open Street Map" Extension for TYPO3 CMS.
@@ -27,6 +28,10 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     protected $addressRepository = null;
 
     /**
+     * contentObj
+     */
+    protected $contentObj = null;    
+    /**
      * @param \Nitsan\NsOpenStreetmap\Domain\Repository\AddressRepository $addressRepository
      */
     public function injectAddressRepository(\Nitsan\NsOpenStreetmap\Domain\Repository\AddressRepository $addressRepository)
@@ -37,7 +42,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     /**
      * action list
      *
-     * @return void
+     * @return \Psr\Http\Message\ResponseInterface
      */
     public function listAction()
     {
@@ -49,8 +54,6 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
             $storageIds = $configuration['persistence']['storagePid'];
         }
         $data = ['storageIds'=>$storageIds];
-        $GLOBALS['TSFE']->fe_user->setKey('ses', 'tx_nsopenstreetmap_map', serialize($data));
-        $GLOBALS['TSFE']->fe_user->storeSessionData();
 
         $this->contentObj = $this->configurationManager->getContentObject();
         $data = $this->contentObj->data;
@@ -63,5 +66,6 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         }
         $this->view->assign('locations', $address);
         $this->view->assign('data', $data);
+        return $this->htmlResponse();
     }
 }
