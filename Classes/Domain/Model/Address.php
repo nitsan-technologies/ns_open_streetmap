@@ -50,7 +50,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @return string $title
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -71,7 +71,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @return string $infocontent
      */
-    public function getInfocontent()
+    public function getInfocontent(): string
     {
         return $this->infocontent;
     }
@@ -92,7 +92,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @return string $latitude
      */
-    public function getLatitude()
+    public function getLatitude(): string
     {
         return $this->latitude;
     }
@@ -113,7 +113,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @return string $longitude
      */
-    public function getLongitude()
+    public function getLongitude(): string
     {
         return $this->longitude;
     }

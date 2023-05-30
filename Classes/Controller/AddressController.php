@@ -3,6 +3,7 @@ namespace Nitsan\NsOpenStreetmap\Controller;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use Psr\Http\Message\ResponseInterface;
+use Nitsan\NsOpenStreetmap\Domain\Repository\AddressRepository;
 
 /***
  *
@@ -23,9 +24,8 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     /**
      * addressRepository
      *
-     * @var \Nitsan\NsOpenStreetmap\Domain\Repository\AddressRepository
      */
-    protected $addressRepository = null;
+    protected $addressRepository;
 
     /**
      * contentObj
@@ -44,15 +44,12 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function listAction()
+    public function listAction():ResponseInterface
     {
         $configuration = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK);
         $storageIds = '';
         $setting = $this->settings;
-        $showResult = $setting['showresult'] ?? null;
-        if($showResult != 1){
-            $storageIds = $configuration['persistence']['storagePid'];
-        }
+        $storageIds = $configuration['persistence']['storagePid'];
         $data = ['storageIds'=>$storageIds];
 
         $this->contentObj = $this->configurationManager->getContentObject();

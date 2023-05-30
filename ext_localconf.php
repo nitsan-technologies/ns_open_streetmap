@@ -22,7 +22,7 @@ $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
 );
 $iconRegistry->registerIcon(
     'ext-open-street-map-icon',
-    \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
     ['source' => 'EXT:'. $_EXTKEY .'/Resources/Public/assets/Icons/ns_open_streetmap.svg']
 );
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['security.frontend.enforceContentSecurityPolicy'] = false;
