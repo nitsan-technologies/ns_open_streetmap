@@ -58,7 +58,7 @@ class ScriptViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHel
     {
         $pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
         $pageRenderer->addJsFooterFile(
-            \TYPO3\CMS\Core\Utility\GeneralUtility::writeJavaScriptContentToTemporaryFile($this->renderChildren(), 'js'),
+            \TYPO3\CMS\Core\Utility\GeneralUtility::writeJavaScriptContentToTemporaryFile($this->renderChildren()),
             'text/javascript', // $type
             true, // $compress
             false, // $forceOnTop

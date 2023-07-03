@@ -17,10 +17,9 @@ return [
         ],
         'searchFields' => 'title,infocontent,latitude,longitude',
         'iconfile' => 'EXT:ns_open_streetmap/Resources/Public/assets/Icons/tx_nsopenstreetmap_domain_model_address.gif',
-    ],
-
-    'types' => [
-        '1' => ['showitem' => 'title, infocontent, latitude, longitude, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, sys_language_uid, l10n_diffsource, hidden,starttime, endtime'],
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ],
     ],
     'types' => [
         '0' => [

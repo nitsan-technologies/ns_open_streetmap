@@ -2,8 +2,6 @@
 defined('TYPO3') || die('Access denied.');
 $_EXTKEY = 'ns_open_streetmap';
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:ns_open_streetmap/Configuration/TSconfig/ContentElementWizard.tsconfig">');
-
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
     'NsOpenStreetmap',
     'Map',

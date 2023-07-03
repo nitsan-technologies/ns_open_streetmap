@@ -31,11 +31,8 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * contentObj
      */
     protected $contentObj = null;    
-    /**
-     * @param \Nitsan\NsOpenStreetmap\Domain\Repository\AddressRepository $addressRepository
-     */
-    public function injectAddressRepository(\Nitsan\NsOpenStreetmap\Domain\Repository\AddressRepository $addressRepository)
-    {
+
+    public function __construct(AddressRepository $addressRepository){
         $this->addressRepository = $addressRepository;
     }
 
@@ -61,8 +58,12 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
             $addressId = GeneralUtility::trimExplode(',', $this->settings['address']);
             $address = $this->addressRepository->findAddress($addressId)->toArray();
         }
-        $this->view->assign('locations', $address);
-        $this->view->assign('data', $data);
+        $this->view->assignMultiple(
+            [
+                'locations' => $address,
+                'data' => $data,
+            ]
+        );
         return $this->htmlResponse();
     }
 }
