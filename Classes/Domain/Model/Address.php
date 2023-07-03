@@ -50,7 +50,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @return string $title
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -61,7 +61,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $title
      * @return void
      */
-    public function setTitle($title)
+    public function setTitle($title): void
     {
         $this->title = $title;
     }
@@ -71,7 +71,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @return string $infocontent
      */
-    public function getInfocontent()
+    public function getInfocontent(): string
     {
         return $this->infocontent;
     }
@@ -82,7 +82,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $infocontent
      * @return void
      */
-    public function setInfocontent($infocontent)
+    public function setInfocontent($infocontent): void
     {
         $this->infocontent = $infocontent;
     }
@@ -92,7 +92,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @return string $latitude
      */
-    public function getLatitude()
+    public function getLatitude(): string
     {
         return $this->latitude;
     }
@@ -103,7 +103,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $latitude
      * @return void
      */
-    public function setLatitude($latitude)
+    public function setLatitude($latitude): void
     {
         $this->latitude = $latitude;
     }
@@ -113,7 +113,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @return string $longitude
      */
-    public function getLongitude()
+    public function getLongitude(): string
     {
         return $this->longitude;
     }
@@ -124,7 +124,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $longitude
      * @return void
      */
-    public function setLongitude($longitude)
+    public function setLongitude($longitude): void
     {
         $this->longitude = $longitude;
     }

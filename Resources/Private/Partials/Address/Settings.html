@@ -5,7 +5,7 @@
 
     var openstreetmap = new Object();
   
-    openstreetmap.defaultMapTypes = "<f:format.html parseFuncTSPath="">{settings.defaulttype}</f:format.html>";
+    openstreetmap.defaultMapTypes = "<f:format.raw>{settings.defaulttype}</f:format.raw>";
     openstreetmap.mapSettings = <f:format.raw>{</f:format.raw>
     id: 'map_' + {data.uid},
     <f:if condition="{settings.height} == ''">

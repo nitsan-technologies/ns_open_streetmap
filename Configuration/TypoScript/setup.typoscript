@@ -33,29 +33,3 @@ page {
 
     }
 }
-
-listAction = PAGE
-listAction {
-    typeNum = 741853
-    config {
-        disableAllHeaderCode = 1
-        additionalHeaders = Content-type:application/json
-        xhtml_cleaning = 0
-        admPanel = 0
-    }
-
-    10 = USER
-    10 {
-        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
-        extensionName = NsOpenStreetmap
-        pluginName = Map
-        vendorName = Nitsan
-        controller = Address
-        switchableControllerActions {
-            Address {
-                1 = find
-            }
-        }
-        renderObj < tt_content.list.20.nsopenstreetmap_map
-    }
-}

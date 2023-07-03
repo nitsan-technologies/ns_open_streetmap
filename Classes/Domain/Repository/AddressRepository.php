@@ -17,9 +17,10 @@ namespace Nitsan\NsOpenStreetmap\Domain\Repository;
  */
 class AddressRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-    /*
-    * array $addressId
-    */
+    /**
+     * @param array $addressId
+	 * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
     public function findAddress(array $addressId)
     {
         $query = $this->createQuery();

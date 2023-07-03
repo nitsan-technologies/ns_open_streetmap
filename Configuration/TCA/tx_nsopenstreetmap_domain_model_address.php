@@ -6,10 +6,8 @@ return [
         'tstamp' => 'tstamp',
         'default_sortby' => 'title ASC',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
-        'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'delete' => 'deleted',
         'enablecolumns' => [
@@ -19,12 +17,9 @@ return [
         ],
         'searchFields' => 'title,infocontent,latitude,longitude',
         'iconfile' => 'EXT:ns_open_streetmap/Resources/Public/assets/Icons/tx_nsopenstreetmap_domain_model_address.gif',
-    ],
-    'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, address, infocontent, maplink, latitude, longitude, map, marker_image',
-    ],
-    'types' => [
-        '1' => ['showitem' => 'title, infocontent, latitude, longitude, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, sys_language_uid, l10n_parent, l10n_diffsource, hidden,starttime, endtime'],
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ],
     ],
     'types' => [
         '0' => [
@@ -45,36 +40,12 @@ return [
     ],
     'columns' => [
         'sys_language_uid' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'special' => 'languages',
-                'items' => [
-                    [
-                        'LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages',
-                        -1,
-                        'flags-multiple',
-                    ],
-                ],
-                'default' => 0,
+                'type' => 'language',
             ],
         ],
-        'l10n_parent' => [
-            'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => true,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'items' => [
-                    ['', 0],
-                ],
-                'foreign_table' => 'tx_nsopenstreetmap_domain_model_address',
-                'foreign_table_where' => 'AND tx_nsopenstreetmap_domain_model_address.pid=###CURRENT_PID### AND tx_nsopenstreetmap_domain_model_address.sys_language_uid IN (-1,0)',
-            ],
-        ],
+
         'l10n_diffsource' => [
             'config' => [
                 'type' => 'passthrough',
@@ -95,7 +66,7 @@ return [
                 'type' => 'check',
                 'items' => [
                     '1' => [
-                        '0' => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled',
+                        'label' => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled',
                     ],
                 ],
             ],
@@ -166,3 +137,4 @@ return [
         ],
     ],
 ];
+$GLOBALS['TCA']['tx_nsopenstreetmap_domain_model_address']['ctrl']['security']['ignorePageTypeRestriction'] = true;
