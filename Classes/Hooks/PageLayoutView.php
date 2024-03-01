@@ -1,4 +1,5 @@
 <?php
+
 namespace Nitsan\NsOpenStreetmap\Hooks;
 
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
@@ -7,7 +8,6 @@ use TYPO3\CMS\Fluid\View\StandaloneView;
 
 class PageLayoutView implements PageLayoutViewDrawItemHookInterface
 {
-
     /**
      *
      * @var JobsType Repository object

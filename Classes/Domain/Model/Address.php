@@ -1,5 +1,8 @@
 <?php
+
 namespace Nitsan\NsOpenStreetmap\Domain\Model;
+
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /***
  *
@@ -15,7 +18,7 @@ namespace Nitsan\NsOpenStreetmap\Domain\Model;
 /**
  * Address
  */
-class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Address extends AbstractEntity
 {
     /**
      * title

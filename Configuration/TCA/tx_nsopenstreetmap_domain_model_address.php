@@ -1,4 +1,5 @@
 <?php
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xlf:tx_nsopenstreetmap_domain_model_address',
@@ -22,9 +23,6 @@ return [
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, address, infocontent, maplink, latitude, longitude, map, marker_image',
-    ],
-    'types' => [
-        '1' => ['showitem' => 'title, infocontent, latitude, longitude, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, sys_language_uid, l10n_parent, l10n_diffsource, hidden,starttime, endtime'],
     ],
     'types' => [
         '0' => [
@@ -142,7 +140,7 @@ return [
                 'cols' => 40,
                 'rows' => 15,
                 'eval' => 'trim',
-                'enableRichtext'=>true,
+                'enableRichtext' => true,
             ],
             'defaultExtras' => 'richtext:rte_transform[mode=ts_css]',
         ],

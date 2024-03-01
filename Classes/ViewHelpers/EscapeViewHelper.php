@@ -1,5 +1,8 @@
 <?php
+
 namespace Nitsan\NsOpenStreetmap\ViewHelpers;
+
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /*
  *  Copyright notice
@@ -48,13 +51,13 @@ namespace Nitsan\NsOpenStreetmap\ViewHelpers;
  * </output>
  *
  */
-class EscapeViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
+class EscapeViewHelper extends AbstractViewHelper
 {
     public function render()
     {
         $value = $this->renderChildren();
 
-        if($value){
+        if($value) {
             return str_replace("'", "\'", preg_replace("/\r\n|\r|\n/", '', $value));
         } else {
             return null;

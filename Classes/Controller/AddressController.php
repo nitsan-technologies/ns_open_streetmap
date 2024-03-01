@@ -1,8 +1,13 @@
 <?php
+
 namespace Nitsan\NsOpenStreetmap\Controller;
 
 use TYPO3\CMS\Extbase\Annotation\Inject;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use Nitsan\NsOpenStreetmap\Domain\Repository\AddressRepository;
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+
 /***
  *
  * This file is part of the "[Nitsan] Open Street Map" Extension for TYPO3 CMS.
@@ -17,19 +22,20 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 /**
  * AddressController
  */
-class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class AddressController extends ActionController
 {
     /**
      * addressRepository
      *
-     * @var \Nitsan\NsOpenStreetmap\Domain\Repository\AddressRepository
+     * @var AddressRepository
      */
     protected $addressRepository = null;
+    protected $contentObj = null;
 
     /**
-     * @param \Nitsan\NsOpenStreetmap\Domain\Repository\AddressRepository $addressRepository
+     * @param AddressRepository $addressRepository
      */
-    public function injectAddressRepository(\Nitsan\NsOpenStreetmap\Domain\Repository\AddressRepository $addressRepository)
+    public function injectAddressRepository(AddressRepository $addressRepository)
     {
         $this->addressRepository = $addressRepository;
     }
@@ -41,14 +47,14 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function listAction()
     {
-        $configuration = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK);
+        $configuration = $this->configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK);
         $storageIds = '';
         $setting = $this->settings;
         $showResult = $setting['showresult'] ?? null;
-        if($showResult != 1){
+        if($showResult != 1) {
             $storageIds = $configuration['persistence']['storagePid'];
         }
-        $data = ['storageIds'=>$storageIds];
+        $data = ['storageIds' => $storageIds];
         $GLOBALS['TSFE']->fe_user->setKey('ses', 'tx_nsopenstreetmap_map', serialize($data));
         $GLOBALS['TSFE']->fe_user->storeSessionData();
 

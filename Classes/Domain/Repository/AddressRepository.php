@@ -1,5 +1,8 @@
 <?php
+
 namespace Nitsan\NsOpenStreetmap\Domain\Repository;
+
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /***
  *
@@ -15,7 +18,7 @@ namespace Nitsan\NsOpenStreetmap\Domain\Repository;
 /**
  * The repository for Addresses
  */
-class AddressRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class AddressRepository extends Repository
 {
     /*
     * array $addressId
