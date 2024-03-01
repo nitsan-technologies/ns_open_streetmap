@@ -1,5 +1,10 @@
 <?php
+
 namespace Nitsan\NsOpenStreetmap\Domain\Repository;
+
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /***
  *
@@ -15,11 +20,12 @@ namespace Nitsan\NsOpenStreetmap\Domain\Repository;
 /**
  * The repository for Addresses
  */
-class AddressRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class AddressRepository extends Repository
 {
     /**
      * @param array $addressId
-	 * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     * @return array|QueryResultInterface
+     * @throws InvalidQueryException
      */
     public function findAddress(array $addressId)
     {
@@ -27,7 +33,6 @@ class AddressRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         $query->matching(
             $query->in('uid', $addressId)
         );
-        $result = $query->execute();
-        return $result;
+        return $query->execute();
     }
 }

@@ -2,22 +2,18 @@
 <div class="info-window">
     <div class="title">
         <b>
-            <esc:escape>
-                <f:format.raw>
-                    {address.title}
-                </f:format.raw>
-            </esc:escape>
+            <f:format.raw>
+                {address.title}
+            </f:format.raw>
         </b>
     </div>
     <div class="address">
         <f:format.raw>
-            <esc:escape>
-                <f:format.htmlentitiesDecode>
-                        <f:format.html parseFuncTSPath="lib.parseFunc">
-                            {address.infocontent}
-                        </f:format.html>
-                </f:format.htmlentitiesDecode>
-            </esc:escape>
+            <f:format.htmlentitiesDecode>
+                <f:format.html parseFuncTSPath="lib.parseFunc">
+                    {address.infocontent}
+                </f:format.html>
+            </f:format.htmlentitiesDecode>
         </f:format.raw>
     </div>
 </div>
