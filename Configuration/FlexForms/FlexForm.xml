@@ -22,7 +22,7 @@
 								<type>select</type>
 								<renderType>selectMultipleSideBySide</renderType>
 								<foreign_table>tx_nsopenstreetmap_domain_model_address</foreign_table>
-								<foreign_table_where>AND (tx_nsopenstreetmap_domain_model_address.sys_language_uid IN (-1,0))</foreign_table_where>
+								<foreign_table_where>AND tx_nsopenstreetmap_domain_model_address.sys_language_uid = ###REC_FIELD_sys_language_uid###</foreign_table_where>
 								<size>8</size>
 								<maxitems>999</maxitems>
 							</config>
