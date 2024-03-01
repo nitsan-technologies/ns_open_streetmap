@@ -1,4 +1,5 @@
 <?php
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xlf:tx_nsopenstreetmap_domain_model_address',
@@ -137,4 +138,3 @@ return [
         ],
     ],
 ];
-$GLOBALS['TCA']['tx_nsopenstreetmap_domain_model_address']['ctrl']['security']['ignorePageTypeRestriction'] = true;

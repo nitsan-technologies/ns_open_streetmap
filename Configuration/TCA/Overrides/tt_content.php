@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3') or die();
 
 $extKey = 'ns_open_streetmap';
