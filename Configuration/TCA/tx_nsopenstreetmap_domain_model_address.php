@@ -103,7 +103,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim',
+                'eval' => 'trim,reuired',
             ],
         ],
         'infocontent' => [
@@ -113,8 +113,8 @@ return [
                 'type' => 'text',
                 'cols' => 40,
                 'rows' => 15,
-                'eval' => 'trim',
-                'enableRichtext'=>true,
+                'eval' => 'trim,required',
+                'enableRichtext' => true,
             ],
             'defaultExtras' => 'richtext:rte_transform[mode=ts_css]',
         ],
@@ -124,7 +124,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim',
+                'eval' => 'trim,required',
             ],
         ],
         'longitude' => [
@@ -133,7 +133,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim',
+                'eval' => 'trim,required',
             ],
         ],
     ],
