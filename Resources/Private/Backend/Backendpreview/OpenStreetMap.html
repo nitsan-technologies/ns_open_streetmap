@@ -18,23 +18,23 @@
 					</th>
 				</tr>
 			</thead>
-			<f:if condition="{flexformData.settings.address}">
+			<f:if condition="{pi_flexform_transformed.settings.address}">
 					<tr>
 						<th style='text-align:left'>
 					    	<f:translate key="LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xl:address" />
 					    </th>
 					    <td style='padding-left: 10px;'>
-					    	{flexformData.settings.address}
+					    	{pi_flexform_transformed.settings.address}
 					    </td>
 					</tr>
 			</f:if>	
-			<f:if condition="{flexformData.settings.height}">
+			<f:if condition="{pi_flexform_transformed.settings.height}">
 				<tr>
 					<th style='text-align:left'>
 				    	<f:translate key="LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xl:height" />
 				    </th>
 				    <td style='padding-left: 10px;'>
-				    	{flexformData.settings.height}
+				    	{pi_flexform_transformed.settings.height}
 				    </td>
 				</tr>
 			</f:if>

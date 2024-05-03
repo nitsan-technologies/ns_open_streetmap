@@ -3,7 +3,6 @@
 use TYPO3\CMS\Core\Imaging\IconRegistry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
-use Nitsan\NsOpenStreetmap\Hooks\PageLayoutView;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use Nitsan\NsOpenStreetmap\Controller\AddressController;
 use TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider;
@@ -44,4 +43,7 @@ foreach ($typeArray as $currentType) {
     );
 }
 
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['ns_open_streetmap'] = PageLayoutView::class;
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+    '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TSconfig/ContentElementWizard.tsconfig">'
+);

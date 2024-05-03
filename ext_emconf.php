@@ -1,7 +1,7 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => '[NITSAN] Open Street Map Plugin',
+    'title' => 'Open Street Map Plugin',
     'description' => 'This extension can easily integrate of powerful features of OpenStreet map like find-places, find-direction between locations etc. Live-Demo: https://demo.t3planet.com/t3-extensions/openstreet-map You can download PRO version for more-features & free-support at https://t3planet.com/typo3-openstreetmap-extension',
     'category' => 'plugin',
     'author' => 'T3: Jay Bhalgamiya, QA: Krishna Dhapa',

@@ -16,7 +16,7 @@
 				<source>address</source>
 			</trans-unit>
 			<trans-unit id="infocontent.description">
-				<source>infocontent</source>
+				<source>Info Content</source>
 			</trans-unit>
 			<trans-unit id="latitude.description">
 				<source>latitude</source>

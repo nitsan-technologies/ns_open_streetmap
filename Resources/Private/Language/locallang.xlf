@@ -7,7 +7,7 @@
 				<source>Select place like hotels, hospitals, banks etc..</source>
 			</trans-unit>
 			<trans-unit id="tx_ns_open_streetmap_domain_model_map">
-				<source>OpenStreet Map</source>
+				<source>Open Street Map</source>
 			</trans-unit>
 			<trans-unit id="tx_ns_open_streetmap_domain_model_map.description">
 				<source>In this plugin you can find places(banks,store etc..), direction between two places with different theme.</source>
@@ -19,7 +19,7 @@
 				<source>Title</source>
 			</trans-unit>
 			<trans-unit id="tx_nsopenstreetmap_domain_model_address.infocontent">
-				<source>Infocontent</source>
+				<source>Info Content</source>
 			</trans-unit>
 			<trans-unit id="tx_nsopenstreetmap_domain_model_address.latitude">
 				<source>Latitude</source>
