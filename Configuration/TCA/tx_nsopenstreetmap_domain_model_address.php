@@ -71,8 +71,10 @@ return [
                 ],
                 'foreign_table' => 'tx_nsopenstreetmap_domain_model_address',
                 'foreign_table_where' => 'AND tx_nsopenstreetmap_domain_model_address.pid=###CURRENT_PID### AND tx_nsopenstreetmap_domain_model_address.sys_language_uid IN (-1,0)',
-            ],
+                'default' => 0,
+            ], 
         ],
+        
         'l10n_diffsource' => [
             'config' => [
                 'type' => 'passthrough',
