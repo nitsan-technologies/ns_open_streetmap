@@ -34,7 +34,7 @@
 							<config>
 								<type>input</type>
 								<default>500</default>
-								<eval>required</eval>
+								<eval>float,required</eval>
 								<range>
 									<lower>500</lower>
 									<upper>1000</upper>
