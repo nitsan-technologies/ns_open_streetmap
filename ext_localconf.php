@@ -47,3 +47,7 @@ foreach ($typeArray as $currentType) {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
     '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TSconfig/ContentElementWizard.tsconfig">'
 );
+
+// Register the class to be available in 'eval' of TCA
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\Nitsan\NsOpenStreetmap\Evaluation\EvaluationLatitude::class] = '';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\Nitsan\NsOpenStreetmap\Evaluation\EvaluationLongitude::class] = '';

@@ -152,7 +152,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,required',
+                'eval' => 'trim,required,' . \Nitsan\NsOpenStreetmap\Evaluation\EvaluationLatitude::class
             ],
         ],
         'longitude' => [
@@ -161,7 +161,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,required',
+                'eval' => 'trim,required,' . \Nitsan\NsOpenStreetmap\Evaluation\EvaluationLatitude::class
             ],
         ],
     ],

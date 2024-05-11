@@ -26,6 +26,7 @@ class AddressRepository extends Repository
     public function findAddress(array $addressId)
     {
         $query = $this->createQuery();
+        $query->getQuerySettings()->setRespectStoragePage(false);
         $query->matching(
             $query->in('uid', $addressId)
         );
