@@ -7,20 +7,7 @@ namespace Nitsan\NsOpenStreetmap\Evaluation;
  */
 class EvaluationLongitude
 {
-
-
-
-    /**
-     * JavaScript code for client side validation/evaluation
-     *
-     * @return string JavaScript code for client side validation/evaluation
-     */
-    public function returnFieldJS()
-    {
-        return 'return value + " [added by JavaScript on field blur]";';
-    }
-
-    /**
+     /**
      * Server-side validation/evaluation on saving the record
      *
      * @param string $value The field value to be evaluated
@@ -30,7 +17,7 @@ class EvaluationLongitude
      */
     public function evaluateFieldValue($value, $is_in, &$set) : string
     {
-      return (preg_match("/^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}$/", $value)) ? $value : '';
+      return (preg_match("/^(\+|-)?(?:180(?:(?:\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{1,6})?))$/", $value)) ? $value : '';
     }
 
 } 

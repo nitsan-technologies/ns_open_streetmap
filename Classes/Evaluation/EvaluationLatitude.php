@@ -7,19 +7,6 @@ namespace Nitsan\NsOpenStreetmap\Evaluation;
  */
 class EvaluationLatitude
 {
-
-
-
-    /**
-     * JavaScript code for client side validation/evaluation
-     *
-     * @return string JavaScript code for client side validation/evaluation
-     */
-    public function returnFieldJS()
-    {
-        return 'return value + " [added by JavaScript on field blur]";';
-    }
-
     /**
      * Server-side validation/evaluation on saving the record
      *
@@ -30,7 +17,7 @@ class EvaluationLatitude
      */
     public function evaluateFieldValue($value, $is_in, &$set) : string
     {
-      return (preg_match("/^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}$/", $value)) ? $value : '';
+      return (preg_match("/^(\+|-)?(?:90(?:(?:\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\.[0-9]{1,6})?))$/", $value)) ? $value : '';
     }
 
 } 
