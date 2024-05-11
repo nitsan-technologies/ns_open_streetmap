@@ -474,11 +474,13 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	text-align: center;
 	margin-bottom: 20px;
 	}
-.leaflet-popup-content-wrapper {
-	padding: 1px;
-	text-align: left;
-	border-radius: 12px;
-	}
+	.leaflet-popup-content-wrapper {
+    padding: 1px;
+    text-align: left;
+    border-radius: 12px;
+    max-height: 200px; /* Adjust the maximum height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
 .leaflet-popup-content {
 	margin: 13px 24px 13px 20px;
 	line-height: 1.3;
