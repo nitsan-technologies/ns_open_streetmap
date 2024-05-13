@@ -32,9 +32,10 @@
 						<TCEforms>
 							<label>LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xlf:tx_nsopenstreetmap_map.flexform.height</label>
 							<config>
-								<type>input</type>
+								<type>number</type>
+								<format>decimal</format>
 								<default>500</default>
-								<eval>required</eval>
+								<nullable>false</nullable>
 								<range>
 									<lower>500</lower>
 									<upper>1000</upper>

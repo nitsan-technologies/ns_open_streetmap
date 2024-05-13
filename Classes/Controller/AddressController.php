@@ -48,8 +48,9 @@ class AddressController extends ActionController
      */
     public function listAction(): ResponseInterface
     {
-        $this->contentObj = $this->configurationManager->getContentObject();
-        $data = $this->contentObj->data;
+        
+        $currentContentObject = $this->request->getAttribute('currentContentObject');
+        $data = $currentContentObject->data;
 
         if (empty($this->settings['address'])) {
             $address = $this->addressRepository->findAll()->toArray();
