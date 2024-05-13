@@ -1,7 +1,7 @@
 {
   "name": "nitsan/ns-open-streetmap",
   "type": "typo3-cms-extension",
-  "description": "https://t3planet.com/typo3-openstreetmap-extension",
+  "description": "The TYPO3 OpenStreetMap extension allows you to effortlessly embed maps from OpenStreetMap into your TYPO3 website. It enables features such as 5+ OpenStreetMap styles, displaying physical addresses, location popups, and 10+ customization options, compatible with TYPO3 v12.  ",
   "homepage": "https://extensions.typo3.org/extension/ns_open_streetmap/",
   "license": "GPL-2.0+",
   "keywords": [
@@ -10,7 +10,7 @@
     "Map",
     "Search",
     "Direction",
-    "NITSAN"
+    "T3Planet "
   ],
   "support": {
     "issues": "https://github.com/nitsan-technologies/ns_open_streetmap/issues"

@@ -9,7 +9,7 @@ $extKey = 'ns_open_streetmap';
 ExtensionManagementUtility::addStaticFile(
     $extKey,
     'Configuration/TypoScript',
-    '[Nitsan] OpenStreetMap'
+    'OpenStreetMap'
 );
 
 ExtensionManagementUtility::addLLrefForTCAdescr(

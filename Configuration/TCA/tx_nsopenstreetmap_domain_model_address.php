@@ -71,8 +71,10 @@ return [
                 ],
                 'foreign_table' => 'tx_nsopenstreetmap_domain_model_address',
                 'foreign_table_where' => 'AND tx_nsopenstreetmap_domain_model_address.pid=###CURRENT_PID### AND tx_nsopenstreetmap_domain_model_address.sys_language_uid IN (-1,0)',
-            ],
+                'default' => 0,
+            ], 
         ],
+        
         'l10n_diffsource' => [
             'config' => [
                 'type' => 'passthrough',
@@ -129,7 +131,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim',
+                'eval' => 'trim,required',
             ],
         ],
         'infocontent' => [
@@ -139,7 +141,7 @@ return [
                 'type' => 'text',
                 'cols' => 40,
                 'rows' => 15,
-                'eval' => 'trim',
+                'eval' => 'trim,required',
                 'enableRichtext' => true,
             ],
             'defaultExtras' => 'richtext:rte_transform[mode=ts_css]',
@@ -150,7 +152,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim',
+                'eval' => 'trim,required,' . \Nitsan\NsOpenStreetmap\Evaluation\EvaluationLatitude::class
             ],
         ],
         'longitude' => [
@@ -159,7 +161,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim',
+                'eval' => 'trim,required,' . \Nitsan\NsOpenStreetmap\Evaluation\EvaluationLatitude::class
             ],
         ],
     ],

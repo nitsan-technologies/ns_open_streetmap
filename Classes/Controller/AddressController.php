@@ -2,7 +2,6 @@
 
 namespace Nitsan\NsOpenStreetmap\Controller;
 
-use TYPO3\CMS\Extbase\Annotation\Inject;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use Nitsan\NsOpenStreetmap\Domain\Repository\AddressRepository;
