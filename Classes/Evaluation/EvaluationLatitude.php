@@ -18,7 +18,7 @@ class EvaluationLatitude
      */
     public function evaluateFieldValue($value, $is_in, &$set) : string
     {
-      return (preg_match("/^(\+|-)?(?:90(?:(?:\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\.[0-9]{1,6})?))$/", $value)) ? $value : '';
+      return (preg_match("/^(\+|-)?(?:90(?:(?:\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\.[0-9]{1,15})?))$/", $value)) ? $value : '';
     }
 
 } 
