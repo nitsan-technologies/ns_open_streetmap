@@ -17,7 +17,7 @@ class EvaluationLongitude
      */
     public function evaluateFieldValue($value, $is_in, &$set) : string
     {
-      return (preg_match("/^(\+|-)?(?:180(?:(?:\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{1,6})?))$/", $value)) ? $value : '';
+      return (preg_match("/^(\+|-)?(?:180(?:(?:\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{1,15})?))$/", $value)) ? $value : '';
     }
 
 } 

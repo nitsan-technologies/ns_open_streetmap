@@ -30,7 +30,7 @@ $iconRegistry->registerIcon(
     SvgIconProvider::class,
     ['source' => 'EXT:'. $_EXTKEY .'/Resources/Public/assets/Icons/ns_open_streetmap.svg']
 );
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['security.frontend.enforceContentSecurityPolicy'] = false;
+
 
 // Register the class to be available in 'eval' of TCA
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\Nitsan\NsOpenStreetmap\Evaluation\EvaluationLatitude::class] = '';
