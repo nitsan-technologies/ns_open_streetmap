@@ -6,3 +6,9 @@ services:
 
   Nitsan\NsOpenStreetmap\:
     resource: '../Classes/*'
+
+  Nitsan\NsOpenStreetmap\Controller\AddressController:
+    public: true
+    arguments:
+      $addressRepository: '@Nitsan\NsOpenStreetmap\Domain\Repository\AddressRepository'
+      
