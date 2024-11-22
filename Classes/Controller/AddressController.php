@@ -51,6 +51,7 @@ class AddressController extends ActionController
         
         $currentContentObject = $this->request->getAttribute('currentContentObject');
         $data = $currentContentObject->data;
+        
 
         if (empty($this->settings['address'])) {
             $address = $this->addressRepository->findAll()->toArray();

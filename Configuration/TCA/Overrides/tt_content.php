@@ -11,7 +11,9 @@ $extKey = 'ns_open_streetmap';
 $pluginSignature = ExtensionUtility::registerPlugin(
     'NsOpenStreetmap',
     'Map',
-    'OpenStreetMap'
+    'OpenStreetMap',
+    '',
+    'plugins'
 );
 
 // Flexform

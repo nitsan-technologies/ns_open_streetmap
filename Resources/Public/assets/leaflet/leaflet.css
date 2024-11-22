@@ -527,8 +527,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	right: 0;
 	border: none;
 	text-align: center;
-	width: 24px;
-	height: 24px;
+	width: 20px;
+	height: 20px;
 	font: 16px/24px Tahoma, Verdana, sans-serif;
 	color: #757575;
 	text-decoration: none;
@@ -658,3 +658,21 @@ svg.leaflet-image-layer.leaflet-interactive path {
 		color-adjust: exact;
 		}
 	}
+
+
+.leaflet-fade-anim .leaflet-map-pane .leaflet-popup {
+  padding: 20px 0 18px 10px;
+  max-height: 220px;
+  background-color: white;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip  {
+  background: transparent;
+  box-shadow: none;
+}
+
+.leaflet-popup-content {
+  margin: 5px 10px 5px 6px;
+}

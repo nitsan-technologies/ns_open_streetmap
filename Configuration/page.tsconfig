@@ -1,6 +1,6 @@
 mod.wizards.newContentElement.wizardItems.plugins {
 	elements {
-			openstreetmap {
+			nsopenstreetmap_map {
 				iconIdentifier = ext-open-street-map-icon
 				title = LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xlf:tx_ns_open_streetmap_domain_model_map
 				description = LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xlf:tx_ns_open_streetmap_domain_model_map.description

@@ -16,7 +16,7 @@
 				<type>array</type>
 				<el>
 					<settings.address>
-						<TCEforms>
+					
 							<label>LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xlf:tx_nsopenstreetmap_map.flexform.address</label>
 							<config>
 								<type>select</type>
@@ -26,10 +26,10 @@
 								<size>8</size>
 								<maxitems>999</maxitems>
 							</config>
-						</TCEforms>
+						
 					</settings.address>
 					<settings.height>
-						<TCEforms>
+					
 							<label>LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xlf:tx_nsopenstreetmap_map.flexform.height</label>
 							<config>
 								<type>number</type>
@@ -41,7 +41,7 @@
 									<upper>1000</upper>
 								</range>
 							</config>
-						</TCEforms>
+					
 					</settings.height>
 				</el>
 			</ROOT>
