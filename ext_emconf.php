@@ -1,14 +1,13 @@
 <?php
 
 $EM_CONF['ns_open_streetmap'] = [
-    'title' => 'Open Street Map',
-    'description' => 'The TYPO3 OpenStreetMap extension allows you to effortlessly embed maps from OpenStreetMap into your TYPO3 website. It enables features such as 5+ OpenStreetMap styles, displaying physical addresses, location popups, and 10+ customization options, compatible with TYPO3 v12.
-
-	*** Live Demo: https://demo.t3planet.com/t3-extensions/openstreet-map *** Premium Version, Documentation & Free Support: https://t3planet.com/typo3-openstreetmap-extension',
+    'title' => 'TYPO3 OpenStreetMap Integration',
+    'description' => 'Easily embed interactive maps from OpenStreetMap into your TYPO3 website. Supports multiple map styles, location markers, popups, and over 10 customization options—fully compatible with TYPO3 v12 and v13.',
+		
     'category' => 'plugin',
-    'author' => 'T3: Jay Bhalgamiya, Divya Goklani, QA: Krishna Dhapa',
-    'author_email' => 'sanjay@nitsan.in',
-    'author_company' => 'T3Planet // NITSAN',
+    'author' => 'Team T3Planet',
+    'author_email' => 'info@t3planet.de',
+    'author_company' => 'T3Planet',
     'state' => 'stable',
     'internal' => '',
     'uploadfolder' => '0',
