@@ -1,0 +1,20 @@
+categories:
+  nsopenstreetmap:
+    label: NsOpenStreetmap Settings
+
+  nsopenstreetmap.general:
+    label: General Settings
+    parent: nsopenstreetmap
+
+settings:
+  plugin.tx_nsopenstreetmap_map.settings.jquery:
+    label: jQuery
+    category: nsopenstreetmap.general
+    type: bool
+    default: 1
+
+  plugin.tx_nsopenstreetmap_map.settings.leafletjs:
+    label: Leaflet JS
+    category: nsopenstreetmap.general
+    type: bool
+    default: 1
