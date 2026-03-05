@@ -38,7 +38,7 @@ foreach ($config as $key => $value) {
     
     ExtensionManagementUtility::addToAllTCAtypes(
         'tt_content',
-        '--div--;plugin,pi_flexform,',
+        '--div--;plugin,pi_flexform,pages,',
         $value,
         'after:subheader'
     );
