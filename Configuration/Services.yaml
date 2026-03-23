@@ -11,4 +11,3 @@ services:
     public: true
     arguments:
       $addressRepository: '@Nitsan\NsOpenStreetmap\Domain\Repository\AddressRepository'
-      

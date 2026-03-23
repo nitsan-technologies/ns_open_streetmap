@@ -4,7 +4,6 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 use Nitsan\NsOpenStreetmap\Controller\AddressController;
 
 defined('TYPO3') || die('Access denied.');
-$_EXTKEY = 'ns_open_streetmap';
 
 ExtensionUtility::configurePlugin(
     'NsOpenStreetmap',
