@@ -5,11 +5,11 @@ mod.wizards.newContentElement.wizardItems.plugins {
 				title = LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xlf:tx_ns_open_streetmap_domain_model_map
 				description = LLL:EXT:ns_open_streetmap/Resources/Private/Language/locallang_db.xlf:tx_ns_open_streetmap_domain_model_map.description
 				tt_content_defValues {
-					CType = list
-					list_type = nsopenstreetmap_map
+					CType = nsopenstreetmap_map
 				}
 			}
 		}
 	show = *
 }
 mod.web_layout.tt_content.preview.list.nsopenstreetmap_map = EXT:ns_open_streetmap/Resources/Private/Backend/Backendpreview/OpenStreetMap.html
+mod.web_layout.tt_content.preview.nsopenstreetmap_map = EXT:ns_open_streetmap/Resources/Private/Backend/Backendpreview/OpenStreetMap.html
