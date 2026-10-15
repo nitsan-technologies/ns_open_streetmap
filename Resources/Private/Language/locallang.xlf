@@ -27,6 +27,15 @@
 			<trans-unit id="tx_nsopenstreetmap_domain_model_address.longitude">
 				<source>Longitude</source>
 			</trans-unit>
+			<trans-unit id="premium.strip.headline">
+				<source>You're using the free version of NS OpenStreetMap</source>
+			</trans-unit>
+			<trans-unit id="premium.strip.description">
+				<source>Unlock premium features and get more out of NS OpenStreetMap.</source>
+			</trans-unit>
+			<trans-unit id="premium.strip.trial">
+				<source>Start Free Trial</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
