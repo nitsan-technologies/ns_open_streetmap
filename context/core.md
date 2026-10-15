@@ -38,6 +38,8 @@ marker images (`assets/leaflet/`).
 
 - No PHPUnit, PHPStan, CS fixer or package.json in the repo.
 - CI: `.github/workflows/ter-release.yml` only (publishes tags to TER with tailor on PHP 7.4).
+- `.gitattributes` export-ignores `.github/`, `AGENTS.md`, `CLAUDE.md`, `context/`, `tasks/` and itself, so they
+  are not in the GitHub/Composer archive or the TER package (the TER release uploads the GitHub tag archive).
 - No Crowdin config; source labels in `Resources/Private/Language/locallang.xlf` (plugin, address, premium strip)
   and `locallang_db.xlf` (TCA, FlexForm, constants, preview).
 
