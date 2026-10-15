@@ -16,7 +16,8 @@
     "issues": "https://github.com/nitsan-technologies/ns_open_streetmap/issues"
   },
   "require": {
-    "typo3/cms-core": "^12 || ^13 || ^14"
+    "typo3/cms-core": "^12 || ^13 || ^14",
+    "nitsan/ns-license": "^14.5.4"
   },
   "autoload": {
     "psr-4": {
