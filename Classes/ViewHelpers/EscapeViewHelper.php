@@ -1,64 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Nitsan\NsOpenStreetmap\ViewHelpers;
 
-/*
- *  Copyright notice
- *
- *  (c) 2012 Marc Hirdes <Marc_Hirdes@gmx.de>, Nitsan GmbH
- *
- *  All rights reserved
- *
- *  This script is part of the TYPO3 project. The TYPO3 project is
- *  free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  The GNU General Public License can be found at
- *  http://www.gnu.org/copyleft/gpl.html.
- *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  This copyright notice MUST APPEAR in all copies of the script!
- */
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
+ * Encodes a value as a JSON literal for safe use inside inline JavaScript.
  */
-
-/**
- * Renders a HTML-script value by passing it and escape ' to pretend for errors.
- *
- * == Examples ==
- *
- * <code title="Default parameters">
- * <nsopenstreetmap:format.escape>function('');</nsopenstreetmap:format.escape>
- * </code>
- * <output>
- *function(\'\');
- * </output>
- *
- * <code title="Inline notation">
- * {some'Text' -> nsopenstreetmap:format.escape}
- * </code>
- * <output>
- * some\'Text\'
- * </output>
- *
- */
-class EscapeViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
+class EscapeViewHelper extends AbstractViewHelper
 {
-    public function render()
+    /**
+     * @var bool
+     */
+    protected $escapeChildren = false;
+
+    /**
+     * @var bool
+     */
+    protected $escapeOutput = false;
+
+    public function render(): string
     {
         $value = $this->renderChildren();
 
-        if($value) {
-            return str_replace("'", "\'", preg_replace("/\r\n|\r|\n/", '', $value));
-        } else {
-            return null;
-        }
+        return json_encode($value ?? '', JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE) ?: '""';
     }
 }

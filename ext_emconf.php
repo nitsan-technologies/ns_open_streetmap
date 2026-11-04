@@ -2,7 +2,7 @@
 
 $EM_CONF['ns_open_streetmap'] = [
     'title' => 'TYPO3 OpenStreetMap Integration',
-    'description' => 'Easily embed interactive maps from OpenStreetMap into your TYPO3 website. Supports multiple map styles, location markers, popups, and over 10 customization options—fully compatible with TYPO3 v12 and v13.',
+    'description' => 'Easily embed interactive maps from OpenStreetMap into your TYPO3 website. Supports multiple map styles, location markers, popups, and over 10 customization options—fully compatible with TYPO3 v12, v13 and v14.',
     'category' => 'plugin',
     'author' => 'Team T3Planet',
     'author_email' => 'info@t3planet.de',
@@ -11,9 +11,10 @@ $EM_CONF['ns_open_streetmap'] = [
     'internal' => '',
     'uploadfolder' => '0',
     'createDirs' => '',
-    'version' => '14.0.1',
+    'version' => '14.0.2',
     'constraints' => [
         'depends' => [
+            'php' => '8.1.0-8.5.99',
             'typo3' => '12.0.0-14.9.99',
             'ns_license' => '14.5.4-14.9.99',
         ],

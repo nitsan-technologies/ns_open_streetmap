@@ -1,22 +1,12 @@
-{namespace esc=Nitsan\NsOpenStreetmap\ViewHelpers}
-<f:form.hidden name="maxZoom" value='{settings.zoom}'/>
 <div class="add_sidebar" id="sidebar_map_{data.uid}">
     <f:for as="address" each="{locations}" iteration="i">
         <div class="map-add" data-markerid="{i.index}" data-lat="{address.latitude}" data-lng="{address.longitude}"
              data-title="{address.title}">
             <div class="title">
-                <b>
-                    {address.title}
-                </b>
+                <b>{address.title}</b>
             </div>
             <div class="address">
-                <f:format.raw>
-                    <f:format.htmlentitiesDecode>
-                        <f:format.html parseFuncTSPath="lib.parseFunc">
-                            {address.infocontent}
-                        </f:format.html>
-                    </f:format.htmlentitiesDecode>
-                </f:format.raw>
+                <f:format.html parseFuncTSPath="lib.parseFunc">{address.infocontent}</f:format.html>
             </div>
         </div>
     </f:for>

@@ -11,5 +11,4 @@ mod.wizards.newContentElement.wizardItems.plugins {
 		}
 	show = *
 }
-mod.web_layout.tt_content.preview.list.nsopenstreetmap_map = EXT:ns_open_streetmap/Resources/Private/Backend/Backendpreview/OpenStreetMap.html
 mod.web_layout.tt_content.preview.nsopenstreetmap_map = EXT:ns_open_streetmap/Resources/Private/Backend/Backendpreview/OpenStreetMap.html

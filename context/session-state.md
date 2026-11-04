@@ -1,5 +1,11 @@
 # ns_open_streetmap — Session state
 
+## 2026-11-02 — PHP 8.5 compatibility
+
+- Declared PHP `>=8.1 <8.6` in `composer.json` and `8.1.0-8.5.99` in `ext_emconf.php`
+  (same range as ns_comments / ns_news_comments). Version 14.1.0 → 14.1.1.
+- PHP files scanned for 8.5 deprecations; none found. No runtime code changed.
+
 ## 2026-10-14 — ns_license integration + premium strip + agent context
 
 - Working copy on `main` (b743d66), uncommitted; no feature branch created.

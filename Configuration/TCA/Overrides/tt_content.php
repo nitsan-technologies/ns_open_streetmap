@@ -1,45 +1,31 @@
 <?php
 
-use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-
 defined('TYPO3') || die('Access denied');
 
-$plugins = [
-    ['Map', 'OpenStreetMap'],
-];
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
-$signatures = [];
+$pluginSignature = ExtensionUtility::registerPlugin(
+    'NsOpenStreetmap',
+    'Map',
+    'OpenStreetMap',
+    '',
+    'plugins',
+);
 
-    $signatures[] = ExtensionUtility::registerPlugin(
-       'NsOpenStreetmap',
-        'Map',
-        'OpenStreetMap',
-        '',
-        'plugins',
-    );
+ExtensionManagementUtility::addToAllTCAtypes(
+    'tt_content',
+    '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.plugin,pi_flexform,pages,',
+    $pluginSignature,
+    'after:subheader'
+);
 
-$config = [
-    'NsOpenStreetmap_Map' => $signatures[0],
-];
+$flexFile = 'FILE:EXT:ns_open_streetmap/Configuration/FlexForms/FlexForm.xml';
 
-foreach ($config as $key => $value) {
-    $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$value] =
-        'recursive,select_key';
+// Type-specific FlexForm. Use a string ds — v14 migrates ds['default'] to this form anyway.
+$GLOBALS['TCA']['tt_content']['types'][$pluginSignature]['columnsOverrides']['pi_flexform']['config']['ds'] = $flexFile;
 
-    $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$value] = 'pi_flexform';
-
-    // @extensionScannerIgnoreLine
-    ExtensionManagementUtility::addPiFlexFormValue(
-        '*',
-        "FILE:EXT:ns_open_streetmap/Configuration/FlexForms/FlexForm.xml",
-        $value
-    );
-    
-    ExtensionManagementUtility::addToAllTCAtypes(
-        'tt_content',
-        '--div--;plugin,pi_flexform,pages,',
-        $value,
-        'after:subheader'
-    );
+// Legacy ds map when Core still uses the array form (typical on v12/v13).
+if (is_array($GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['config']['ds'] ?? null)) {
+    $GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['config']['ds']['*,' . $pluginSignature] = $flexFile;
 }

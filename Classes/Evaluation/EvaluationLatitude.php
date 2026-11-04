@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Nitsan\NsOpenStreetmap\Evaluation;
 
 /**
@@ -13,11 +15,9 @@ class EvaluationLatitude
      * @param string $value The field value to be evaluated
      * @param string $is_in The "is_in" value of the field configuration from TCA
      * @param bool $set Boolean defining if the value is written to the database or not.
-     * @return string Evaluated field value
      */
-    public function evaluateFieldValue($value, $is_in, &$set) : string
+    public function evaluateFieldValue($value, $is_in, &$set): string
     {
-      return (preg_match("/^(\+|-)?(?:90(?:(?:\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\.[0-9]{1,15})?))$/", $value)) ? $value : '';
+        return (preg_match('/^(\+|-)?(?:90(?:(?:\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\.[0-9]{1,15})?))$/', (string)$value)) ? (string)$value : '';
     }
-
-} 
+}

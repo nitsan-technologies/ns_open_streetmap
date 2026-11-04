@@ -1,19 +1,8 @@
-{namespace esc=Nitsan\NsOpenStreetmap\ViewHelpers}
 <div class="info-window">
     <div class="title">
-        <b>
-            <f:format.raw>
-                {address.title}
-            </f:format.raw>
-        </b>
+        <b>{address.title}</b>
     </div>
     <div class="address">
-        <f:format.raw>
-            <f:format.htmlentitiesDecode>
-                <f:format.html parseFuncTSPath="lib.parseFunc">
-                    {address.infocontent}
-                </f:format.html>
-            </f:format.htmlentitiesDecode>
-        </f:format.raw>
+        <f:format.html parseFuncTSPath="lib.parseFunc">{address.infocontent}</f:format.html>
     </div>
 </div>
