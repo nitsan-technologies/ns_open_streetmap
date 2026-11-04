@@ -8,7 +8,7 @@
 | Composer name | `nitsan/ns-open-streetmap` |
 | Title (ext_emconf) / product name | TYPO3 OpenStreetMap Integration / OpenStreetMap |
 | Namespace | `Nitsan\NsOpenStreetmap\` → `Classes/` |
-| Version (ext_emconf) | 14.1.0 (latest tag 14.0.0) |
+| Version (ext_emconf) | 14.1.1 (latest tag 14.0.0) |
 | Repository | https://github.com/nitsan-technologies/ns_open_streetmap (default branch `main`) |
 | Licensing status | **Freemium** — this repo is the free version. The NITSAN Free/Freemium sheet needs a Google login; status taken from the T3Planet catalog (`isFree: false` for the premium product) |
 | Premium version (T3Planet catalog) | "OpenStreetMap", €169, https://t3planet.de/en/typo3-openstreetmap-extension |
@@ -17,12 +17,12 @@
 
 | Source | TYPO3 | PHP |
 |---|---|---|
-| `ext_emconf.php` | `12.0.0-14.9.99` | not declared |
-| `composer.json` | `^12 \|\| ^13 \|\| ^14` | not declared |
-| ns_license 14.5.4 (dependency) | `12.4.18-14.9.99` | not declared (TYPO3 12.4 needs 8.1+) |
+| `ext_emconf.php` | `12.0.0-14.9.99` | `8.1.0-8.5.99` |
+| `composer.json` | `^12 \|\| ^13 \|\| ^14` | `>=8.1 <8.6` |
+| ns_license 14.5.4 (dependency) | `12.4.18-14.9.99` | `>=8.1 <8.6` / `8.1.0-8.5.99` |
 
 - Effective minimum is **TYPO3 12.4.18 / PHP 8.1** because of ns_license; the declared `12.0.0` lower bound is
-  kept as is.
+  kept as is. PHP 8.5 is in range; no PHP 8.2+ syntax (see `principles.md`).
 
 ## Dependencies
 

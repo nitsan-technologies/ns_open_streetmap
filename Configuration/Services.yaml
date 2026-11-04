@@ -6,6 +6,7 @@ services:
 
   Nitsan\NsOpenStreetmap\:
     resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
 
   Nitsan\NsOpenStreetmap\Controller\AddressController:
     public: true
